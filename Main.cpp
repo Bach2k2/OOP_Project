@@ -6,17 +6,19 @@ int main()
 {
     KhachHang kh1;
     KhachHang kh2;
-    kh1.setAll("Lee Trung Bac",12,"Hai Trieu");
-    kh2.setAll("Thuy Tien",11,"Hang Rong");
+    kh1.setAll("Nguyen Van A",18,"Da Nang");
+    kh2.setAll("Le Van B",19,"Hai Phong");
     // kh1.print();
     // kh2.print();
     QLKH qli;
     qli.add(kh1);
     qli.add(kh2);
+    qli.display();
     cout<<"\nNhap Khach hang can them: ";
     // vi du:
     KhachHang kh3;
-    kh3.setAll("Donald duck",5,"Disney");
+    kh3.setAll("C",20,"Disney");
+     system("pause");
     int index;
     cout<<"\nNhap vi tri: "<<endl;
     cin>>index;

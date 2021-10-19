@@ -8,7 +8,7 @@ ElecBill::ElecBill()
     this->cost=0;
 }
 void ElecBill::calCost(int elecNumber)
-{
+{//
     if (elecNumber>400) this->cost=(elecNumber-400)*2.976+100*2.834+100*2.536+100*2.014+50*1.734+50*1.678;
     else if(elecNumber>300) this->cost=(elecNumber-300)*2.834+100*2.536+100*2.014+50*1.734+50*1.678;
     else if(elecNumber>200) this->cost=(elecNumber-200)*2.536+100*2.014+50*1.734+50*1.678;
