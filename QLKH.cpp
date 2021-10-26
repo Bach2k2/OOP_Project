@@ -60,7 +60,7 @@ void QLKH::insert(KhachHang &KH, int index)
 
 void QLKH::edit(int index)
 {
-    KhachHang khachHang = getCostumer(index);
+    KhachHang *khachHang = &getCostumer(index);
     string choice;
     do
     {
@@ -74,7 +74,7 @@ void QLKH::edit(int index)
             do
             {
                 cin >> name;
-                khachHang.setName(name);
+                khachHang->setName(name);
                 if (name == "")
                     cout << "Please enter a name.";
             } while (name == "");
@@ -86,7 +86,7 @@ void QLKH::edit(int index)
             do
             {
                 cin >> age;
-                khachHang.setAge(age);
+                khachHang->setAge(age);
             } while (age < 0);
         }
         else if (choice == "adress")
@@ -96,7 +96,7 @@ void QLKH::edit(int index)
             do
             {
                 cin >> adress;
-                khachHang.setAdress(adress);
+                khachHang->setAdress(adress);
                 if (adress == "")
                     cout << "Please enter a valid address";
             } while (adress == "");
@@ -107,7 +107,9 @@ void QLKH::edit(int index)
             cout << "Do you want to cancle editting? Press 'Esc' to quit ";
             anotherChoice=getch();
             if (anotherChoice == 27)
+            {
                 break;
+            }        
         }
     } while (true);
 }
@@ -127,18 +129,10 @@ int QLKH::indexOf(KhachHang &KH)
 
 KhachHang &QLKH::getCostumer(int index)
 {
-    if (index >= s_numNodes || index < 0)
-    {
-        cout << "\nout of bound" << endl;
-        //return;
-    }
-    else
-    {
         KhachHang *p = pHead;
         for (int i = 0; i < index; i++)
             p = p->pNext;
         return *p;
-    }
 }
 void QLKH::remove(int index)
 {

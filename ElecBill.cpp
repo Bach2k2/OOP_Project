@@ -14,7 +14,7 @@ void ElecBill::calCost()
     else if(elecNumber>200) this->cost=(elecNumber-200)*2.536+100*2.014+50*1.734+50*1.678;
     else if(elecNumber>100) this->cost=(elecNumber-100)*2.014+50*1.734+50*1.678;
     else if(elecNumber>50) this->cost=(elecNumber-50)*1.734+50*1.678;
-    else this->cost=(elecNumber-50)*1.678;
+    else this->cost=elecNumber*1.678;
 }
 double ElecBill::getCost()
 {

@@ -24,11 +24,7 @@ int main()
 //     cin>>index;
 //     qli.insert(kh3,index);
 //     qli.display();
-
-        KhachHang kh4;
-        kh4=qli.getCostumer(0);
-        qli.add(kh4);
-        cout<<kh4.getName();
         qli.edit(0);
         cout<<kh1.getName();
+        qli.display();
 }
