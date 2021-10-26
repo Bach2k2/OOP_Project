@@ -21,6 +21,33 @@ string KhachHang::getAdress()
 {
     return this->adress;
 }
+long KhachHang::getCustomId()
+{
+    return this->customId;
+}
+long KhachHang::generateCustomId()
+{
+    static long s_id(100);
+    s_id++;
+    return s_id;
+}
+void KhachHang::setCustomId()
+{
+    this->customId=generateCustomId();
+}
+void KhachHang::setName(string name)
+{
+    this->name = name;
+}
+void KhachHang::setAge(int age)
+{
+    this->age = age;
+}
+void KhachHang::setAdress(string address)
+{
+    this->adress = address;
+}
+
 void KhachHang::setAll(string name, int age, string adress)
 {
    this->name=name;
@@ -32,9 +59,12 @@ void KhachHang::print()
     cout << "\nTen khach hang: " << this->name;
     cout << "\nTuoi: " << this->age;
     cout << "\nDia chi: " << this->adress;
+    checkBill(this->bill);
 }
 void KhachHang::checkBill(ElecBill &bill) 
 {
-    cout<<"So tien dien: "<< bill.getCost()<<endl;
+    cout<<"\nSo tien dien: "<< bill.getCost()<<endl;
 }
+
+
 

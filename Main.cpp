@@ -14,15 +14,18 @@ int main()
     qli.add(kh1);
     qli.add(kh2);
     qli.display();
-    cout<<"\nNhap Khach hang can them: ";
-    // vi du:
-    KhachHang kh3;
-    kh3.setAll("C",20,"Disney");
-     system("pause");
-    int index;
-    cout<<"\nNhap vi tri: "<<endl;
-    cin>>index;
-    qli.insert(kh3,index);
-    qli.display();
-    return 0;
+//     cout<<"\nNhap Khach hang can them: ";
+//     // vi du:
+//     KhachHang kh3;
+//     kh3.setAll("C",20,"Disney");
+//   //   system("pause");
+//     int index;
+//     cout<<"\nNhap vi tri: "<<endl;
+//     cin>>index;
+//     qli.insert(kh3,index);
+//     qli.display();
+
+        KhachHang kh4;
+        kh4=qli.getCostumer(0);
+        cout<<kh4.getName();
 }

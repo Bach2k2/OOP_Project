@@ -1,9 +1,8 @@
 #include "ElecBill.h"
-#include <string>
-using namespace std;
 class KhachHang
 {
 private:
+    long customId;
     string name;
     int age;
     string adress;
@@ -12,13 +11,18 @@ public:
     KhachHang *pNext;
 public:
     KhachHang();
+    void setCustomId();
     void setName(string);
     void setAge(int);
-    void setaAdress(string);
-    void setAll(string, int, string);
+    void setAdress(string);
+    void setAll(string, int, string,ElecBill);
+
+    long generateCustomId();
+    long getCustomId();
     string getName();
     int getAge();
     string getAdress();
     void print();
     void checkBill(ElecBill &);
 };
+
