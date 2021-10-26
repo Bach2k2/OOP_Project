@@ -15,7 +15,7 @@ public:
     void setName(string);
     void setAge(int);
     void setAdress(string);
-    void setAll(string, int, string,ElecBill);
+    void setAll(string, int, string);
 
     long generateCustomId();
     long getCustomId();

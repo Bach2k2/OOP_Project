@@ -27,5 +27,8 @@ int main()
 
         KhachHang kh4;
         kh4=qli.getCostumer(0);
+        qli.add(kh4);
         cout<<kh4.getName();
+        qli.edit(0);
+        cout<<kh1.getName();
 }

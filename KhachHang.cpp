@@ -53,6 +53,17 @@ void KhachHang::setAll(string name, int age, string adress)
    this->name=name;
    this->age=age;
    this->adress=adress;
+   int elecNumber;
+   cout<<"\nEnter unit number ";
+   cin>>elecNumber;
+   cout<<"\nEnter dueDate: ";
+   string dueDate;
+   cin>> dueDate;
+   cout<<"Enter payment Date: ";
+   string paymentDate;
+   cin>> paymentDate;
+   this->bill.setAllBillInfo(elecNumber,dueDate,paymentDate);
+   this->bill.calCost();
 }
 void KhachHang::print()
 {

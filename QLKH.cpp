@@ -1,5 +1,6 @@
 #include "QLKH.h"
 #include <iostream>
+#include <conio.h>
 using namespace std;
 int QLKH::s_numNodes = 0;
 QLKH::QLKH()
@@ -63,7 +64,8 @@ void QLKH::edit(int index)
     string choice;
     do
     {
-        cout << "Bạn muốn sửa thông nào? " << endl;
+        cout << "Which information do you want to edit? " << endl;
+        fflush(stdin);
         cin >> choice;
         if (choice == "name")
         {
@@ -103,6 +105,7 @@ void QLKH::edit(int index)
         {
             char anotherChoice;
             cout << "Do you want to cancle editting? Press 'Esc' to quit ";
+            anotherChoice=getch();
             if (anotherChoice == 27)
                 break;
         }
@@ -126,7 +129,8 @@ KhachHang &QLKH::getCostumer(int index)
 {
     if (index >= s_numNodes || index < 0)
     {
-        cout << "out of bound" << endl;
+        cout << "\nout of bound" << endl;
+        //return;
     }
     else
     {
