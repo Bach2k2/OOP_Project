@@ -15,6 +15,7 @@ void ElecBill::calCost()
     else if(elecNumber>100) this->cost=(elecNumber-100)*2.014+50*1.734+50*1.678;
     else if(elecNumber>50) this->cost=(elecNumber-50)*1.734+50*1.678;
     else this->cost=elecNumber*1.678;
+    this->cost*=1000.0;
 }
 double ElecBill::getCost()
 {
@@ -23,6 +24,14 @@ double ElecBill::getCost()
 void ElecBill::setElecNumber(int elecNumber)
 {
     this->elecNumber=elecNumber;
+}
+void ElecBill::setDueDate(string dueDate)
+{
+    this->dueDate=dueDate;
+}
+void ElecBill::setPaymentDate(string paymentDate)
+{
+    this->paymentDate=paymentDate;
 }
 void ElecBill::setAllBillInfo(int elecNumber,string dueDate,string paymentDate)
 {

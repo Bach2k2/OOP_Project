@@ -19,5 +19,5 @@ public:
     void setPaymentDate(string);
     double getCost();
     void calCost();
-    void setAllBillInfo(int, string ,string);
+    void setAllBillInfo(int,string,string);
 };

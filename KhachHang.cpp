@@ -48,22 +48,30 @@ void KhachHang::setAdress(string address)
     this->adress = address;
 }
 
-void KhachHang::setAll(string name, int age, string adress)
+void KhachHang::setAll(fstream &input)
 {
-   this->name=name;
-   this->age=age;
-   this->adress=adress;
-   int elecNumber;
-   cout<<"\nEnter unit number ";
-   cin>>elecNumber;
-   cout<<"\nEnter dueDate: ";
-   string dueDate;
-   cin>> dueDate;
-   cout<<"Enter payment Date: ";
-   string paymentDate;
-   cin>> paymentDate;
-   this->bill.setAllBillInfo(elecNumber,dueDate,paymentDate);
-   this->bill.calCost();
+    string name;
+   input>>this->name;
+   input>>this->age;
+   input>>this->adress;
+//    cin>>elecNumber;
+//    cout<<"\nEnter dueDate: ";
+//    string dueDate;
+//    cin>> dueDate;
+//    cout<<"Enter payment Date: ";
+//    string paymentDate;
+//    cin>> paymentDate;
+  // this->bill.setAllBillInfo(elecNumber,dueDate,paymentDate);
+    int elecNumber;
+    input>>elecNumber;
+    this->bill.setElecNumber(elecNumber);
+    string dueDate;
+    input>>dueDate;
+    this->bill.setDueDate(dueDate);
+    string paymentDate;
+    input>>paymentDate;
+    this->bill.setPaymentDate(paymentDate);
+    this->bill.calCost();
 }
 void KhachHang::print()
 {
@@ -74,7 +82,7 @@ void KhachHang::print()
 }
 void KhachHang::checkBill(ElecBill &bill) 
 {
-    cout<<"\nSo tien dien: "<< bill.getCost()<<endl;
+    cout<<"\nSo tien dien: "<< bill.getCost()<<" VND"<<endl;
 }
 
 

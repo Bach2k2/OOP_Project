@@ -1,30 +1,33 @@
 #include "QLKH.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 int main()
 {
-    KhachHang kh1;
-    KhachHang kh2;
-    kh1.setAll("Nguyen Van A",18,"Da Nang");
-    kh2.setAll("Le Van B",19,"Hai Phong");
-    // kh1.print();
-    // kh2.print();
+    fstream input("C:\\Users\\DE\\Desktop\\KhachHang.txt");
     QLKH qli;
-    qli.add(kh1);
-    qli.add(kh2);
+    int amount;
+    input >> amount;
+    if (input.is_open())
+    {
+        cout << "Mo thanh cong!!" << endl;
+    }
+    else
+    {
+        cout << "Mo that bai!!" << endl;
+    }
+    // while(!input.eof())	//khi chưa tới cuối file thì tiếp tục đọc
+    // {
+    // 	  KhachHang KH;
+    //       KH.setAll(input);
+    //       qli.add(KH);
+    // }
+    for (int i = 0; i < amount; i++)
+    {
+        KhachHang *KH=new KhachHang;
+        KH->setAll(input);
+        qli.add(*KH);
+    }
     qli.display();
-//     cout<<"\nNhap Khach hang can them: ";
-//     // vi du:
-//     KhachHang kh3;
-//     kh3.setAll("C",20,"Disney");
-//   //   system("pause");
-//     int index;
-//     cout<<"\nNhap vi tri: "<<endl;
-//     cin>>index;
-//     qli.insert(kh3,index);
-//     qli.display();
-        qli.edit(0);
-        cout<<kh1.getName();
-        qli.display();
 }

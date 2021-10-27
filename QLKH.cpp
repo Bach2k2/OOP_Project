@@ -104,12 +104,12 @@ void QLKH::edit(int index)
         else
         {
             char anotherChoice;
-            cout << "Do you want to cancle editting? Press 'Esc' to quit ";
-            anotherChoice=getch();
+            cout << "Do you want to cancle editting? Press 'Esc' to quit " << endl;
+            anotherChoice = getch();
             if (anotherChoice == 27)
             {
                 break;
-            }        
+            }
         }
     } while (true);
 }
@@ -129,27 +129,40 @@ int QLKH::indexOf(KhachHang &KH)
 
 KhachHang &QLKH::getCostumer(int index)
 {
-        KhachHang *p = pHead;
-        for (int i = 0; i < index; i++)
-            p = p->pNext;
-        return *p;
+    KhachHang *p = pHead;
+    for (int i = 0; i < index; i++)
+        p = p->pNext;
+    return *p;
 }
 void QLKH::remove(int index)
 {
-    KhachHang *temp = pHead;
-    if (index >= s_numNodes || index < 0)
+    if (index == 0)
     {
-        cout << "Nằm ngoài danh sách";
-        return;
+        removeFirst();
     }
     else
     {
-        for (int i = 0; i < index - 1; i++)
-            temp = temp->pNext;
-        KhachHang *after = temp->pNext;
-        KhachHang *holder = after->pNext;
-        temp->pNext = holder;
-        delete after;
+        if (pHead != nullptr)
+        {
+            KhachHang *temp = pHead;
+            for (int i = 0; i < index - 1; i++)
+                temp = temp->pNext;
+            KhachHang *after = temp->pNext;
+            KhachHang *holder = after->pNext;
+            temp->pNext = holder;
+            delete after;
+            s_numNodes--;
+        }
+    }
+}
+void QLKH::removeFirst()
+{
+    KhachHang *temp;
+    if (pHead != nullptr)
+    {
+        temp = pHead;
+        pHead = temp->pNext;
+        delete temp;
         s_numNodes--;
     }
 }

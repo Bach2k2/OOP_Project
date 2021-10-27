@@ -1,4 +1,5 @@
 #include "ElecBill.h"
+#include <fstream>
 class KhachHang
 {
 private:
@@ -15,7 +16,7 @@ public:
     void setName(string);
     void setAge(int);
     void setAdress(string);
-    void setAll(string, int, string);
+    void setAll(fstream &);
 
     long generateCustomId();
     long getCustomId();

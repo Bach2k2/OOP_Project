@@ -13,6 +13,9 @@ class QLKH
     int indexOf(KhachHang &);
     KhachHang& getCostumer(int);
     void edit(int);
+    // Xóa ở vị trí index
     void remove(int);
+    // Xóa cái đầu tiên
+    void removeFirst();
     void display();
 };
